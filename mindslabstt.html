@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+
+
+<html>
+<head>
+    <title>AI Builder</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+                <h1>
+                    <a href="AI Builder main.html" class="logo"><strong>AI Builder</strong></a>
+                </h1>
+                <select>
+                    <option>계정 정보1</option>
+                    <option>계정 정보2</option>
+                    <option>계정 정보3</option>
+                    <option>계정 정보4</option>
+                </select>
+            </header>
+
+            <section>
+                <h2>마인즈랩 STT</h2>
+                <p>음성파일을 입력하고 언어를 선택한 다음 '텍스트 변환'을 클릭하여 보세요.</p>
+
+                <div class="row gtr-200">
+                    <div class="col-6">
+                        <h3>음성파일 업로드(mp3, wav)</h3>
+                            <div class="filebox">
+                                <input class="upload-name"  placeholder="음성파일 업로드" />
+                                <label for="inputFile">업로드</label>
+                                <input type="file" id="inputFile">
+                            </div>
+                    </div>
+
+                    <div class="col-6 col-12-medium">
+                        <h3>언어 선택</h3>
+
+                        <select name="voice" onchange="handleOnChange_voice(this)">
+                            <option value="">언어 선택</option>
+                            <option value="korean">한국어</option>
+                            <option value="english">영어</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row gtr-200">
+                    <div class="col-6">
+                        <button type="submit" class='primary'>텍스트 변환</button>
+                    </div>
+
+
+                </div>
+                <h3>Result</h3>
+                <div class="box">
+                    <p></p>
+                </div>
+            </section>
+
+            <section>
+                <h3>AI 서비스 제작을 문의합니다.</h3>
+                <div class="row gtr-200">
+
+                    <div class="col-6">
+
+                        선택한 언어<div class='result' id='language_result'></div>
+                        선택한 모델<div class='result' id='voice_result'></div>
+
+                    </div>
+
+                    <div class="col-6 col-12-medium">
+                        이름<input type="text" name="demo-name" id="demo-name" value="" placeholder="이름" />
+
+                        연락처<input type="text" name="demo-call" id="demo-call" value="" placeholder="연락처" />
+
+                        이메일<input type="email" name="demo-email" id="demo-email" value="" placeholder="이메일" />
+
+                        회사/소속<input type="text" name="demo-company" id="demo-company" value="" placeholder="회사/소속" />
+
+                        연락가능 시간대<input type="text" name="demo-time" id="demo-time" value="" placeholder="Ex) 오후 12시 이후" />
+                    </div>
+
+                </div>
+
+                <h3>개인정보 수집 동의</h3>
+                <blockquote>수집하는 개인정보 항목: 이름, 연락처, 이메일 작성해주시는 개인 정보는 문의 접수 및 고객 불만 해결을 위해 1년간 보관됩니다.
+                    본 동의를 거부할 수 있으나, 미동의 시 견적서 접수가 불가능합니다.</blockquote>
+
+                <input type="checkbox" id="demo-copy" name="demo-copy">
+                <label for="demo-copy">동의합니다.</label>
+
+            </section>
+
+            <section>
+                <!--									<button type="reset" onclick="alert('리셋')">리셋</button>-->
+                <button type="submit" class='primary' onclick="alert('서비스 제작 문의가 접수되었습니다!')">이 구성으로 문의하기</button>
+            </section>
+
+
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+
+            <!-- Menu -->
+            <nav id="menu">
+
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li>
+                        <span class="opener">TTS(Text to Speech)</span>
+                        <ul>
+                            <li><a href="mindslabtts.html">마인즈랩 - TTS</a></li>
+                            <li><a href="#">GOOGLE - TTS</a></li>
+                            <li><a href="#">MICROSOFT - TTS</a></li>
+                            <li><a href="#">KAKAO - TTS</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">STT(Speech to Text)</span>
+                        <ul>
+                            <li><a href="#">마인즈랩 - STT</a></li>
+                            <li><a href="#">GOOGLE - STT</a></li>
+                            <li><a href="#">MICROSOFT - STT</a></li>
+                            <li><a href="#">KAKAO - STT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Chatbot</a></li>
+                    <li><a href="#">Text To Lipsync</a></li>
+                    <li>
+                        <span class="opener">Translate</span>
+                        <ul>
+                            <li><a href="#">마인즈랩 - Translate</a></li>
+                            <li><a href="#">GOOGLE - Translate</a></li>
+                            <li><a href="#">MICROSOFT - Translate</a></li>
+                            <li><a href="#">KAKAO - Translate</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">OCR to TTS</span>
+                        <ul>
+                            <li><a href="#">마인즈랩 - OCR to TTS</a></li>
+                            <li><a href="#">GOOGLE - OCR to TTS</a></li>
+                            <li><a href="#">MICROSOFT - OCR to TTS</a></li>
+                            <li><a href="#">KAKAO - OCR to TTS</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Text Summary</span>
+                        <ul>
+                            <li><a href="#">마인즈랩 - Text Summary</a></li>
+                            <li><a href="#">GOOGLE - Text Summary</a></li>
+                            <li><a href="#">MICROSOFT - Text Summary</a></li>
+                            <li><a href="#">KAKAO - Text Summary</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+
+    function handleOnChange_language(e) {
+        // 선택된 데이터의 텍스트값 가져오기
+        const text = e.options[e.selectedIndex].text;
+
+        console.log(e.options);
+
+        // 선택한 텍스트 출력
+        document.getElementById('language_result').innerText
+            = text;
+    }
+
+    function handleOnChange_voice(e) {
+        // 선택된 데이터의 텍스트값 가져오기
+        const text = e.options[e.selectedIndex].text;
+
+        console.log(e.options);
+
+        // 선택한 텍스트 출력
+        document.getElementById('voice_result').innerText
+            = text;
+    }
+</script>
+
+
+
+</body>
+</html>
